@@ -3,14 +3,6 @@ const routerFeedback = express.Router()
 const FeedbackController = require('../app/controllers/FeedbackController')
 const { authenticatedStaff } = require('../config/db/authenticatedStaff')
 
-
-
-// routerFeedback
-//     .route("/trash")
-//     .get(authenticatedStaff, FeedbackController.trash)
-
-// routerFeedback.put('/restore/:id',
-//     authenticatedStaff, FeedbackController.restore)
 routerFeedback
     .route("/product/:id")
     .get(FeedbackController.getProduct)

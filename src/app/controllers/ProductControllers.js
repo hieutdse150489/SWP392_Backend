@@ -118,9 +118,9 @@ class ProductControllers {
         const materialArray = formData.material
         const course = new Product(formData)
 
-        // here
+        
 
-        // here
+      
         // save thông tin
         course.save()
             .then(() => res.json(req.body))
@@ -128,7 +128,7 @@ class ProductControllers {
                 res.json(error)
             })
 
-        // res.send(`oke`)
+       
     }
 
     show(req, res, next) {

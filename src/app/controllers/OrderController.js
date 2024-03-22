@@ -766,24 +766,7 @@ class OrderController {
         }
     };
 
-    // Vui lòng tham khảo thêm tại code demo
-
-
-    // putAdminStatus(req, res, next) {
-    //     try {
-    //         const { status } = req.params; // Lấy status
-    //         const { orders } = req.body;
-    //         console.log(22222222, orders);
-    //         for (const orderId of orders) {
-    //             console.log(11111111, orders);
-    //             Order.findByIdAndUpdate({ _id: orderId }, { status: status })
-    //                 .catch(err => res.json({ error: err }))
-    //         }
-    //     } catch (error) {
-    //         
-    //         res.status(500).json({ error: 'Could not update the order.' });
-    //     }
-    // }
+    
     async putAdminStatus(req, res, next) {
         try {
             const { status } = req.params; // Lấy status

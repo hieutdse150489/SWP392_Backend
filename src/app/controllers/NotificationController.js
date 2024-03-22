@@ -13,7 +13,7 @@ class notificationController {
                 res.json(error)
             })
 
-        // res.send(`oke`)
+        
     }
 
     get(req, res, next) {
