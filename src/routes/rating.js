@@ -5,12 +5,6 @@ const { authenticatedStaff } = require('../config/db/authenticatedStaff')
 
 
 
-// routerRating
-//     .route("/trash")
-//     .get(authenticatedStaff, RatingController.trash)
-
-// routerRating.put('/restore/:id',
-//     authenticatedStaff, RatingController.restore)
 
 routerRating
     .route("/:id")

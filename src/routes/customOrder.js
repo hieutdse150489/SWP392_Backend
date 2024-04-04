@@ -73,15 +73,7 @@ routerCustomOrder
 routerCustomOrder
   .route("/user/processing/:id")
   .put(CustomOrderController.updateStatusOrder);
-// routerCustomOrder
-//     .route("/:id")
-//     .get(authenticatedStaff, CustomOrderController.getOne)
-//     .put(authenticatedStaff, CustomOrderController.put)
-//     .delete(authenticatedStaff, CustomOrderController.delete)
-// routerCustomOrder
-//     .route("/")
-//     .get(CustomOrderController.getAdmin)
-//     .post(CustomOrderController.check, CustomOrderController.post)
+
 
 
 module.exports = routerCustomOrder

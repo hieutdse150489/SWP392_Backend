@@ -75,16 +75,7 @@ class TableController {
         } else {
 
             Artwork.paginate({ name: { $regex: escapedSearchTerm } }, options, function (err, result) {
-                // result.docs
-                // result.totalDocs = 100
-                // result.limit = 10
-                // result.page = 1
-                // result.totalPages = 10
-                // result.hasNextPage = true
-                // result.nextPage = 2
-                // result.hasPrevPage = false
-                // result.prevPage = null
-                // result.pagingCounter = 1
+                
                 if (result.totalPages < result.page) {
                     const options1 = {
                         page: result.totalPages,

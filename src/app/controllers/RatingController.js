@@ -27,30 +27,6 @@ class RatingController {
     post(req, res, next) {
         try {
             const formData = req.body;
-            // User.findById(formData.user)
-            //     .then((data => {
-            //         console.log(11111111111111,data);
-
-            //         if (data) {
-            //         console.log(333333333333,data);
-
-            //             return res.status(404).json({ error: 'User not found.' });
-            //         }
-
-            //     }))
-            //     .catch(err => res.status(err))
-
-
-
-            // Artwork.findById(formData.product)
-            //     .then((data) => {
-            //         console.log(22222222222,data);
-            //         if (data==null) {
-            //             return res.status(404).json({ error: 'Artwork not found.' });
-            //         }
-
-            //     })
-            //     .catch(err => res.status(err))
 
 
             // Tạo một đối tượng đánh giá mới

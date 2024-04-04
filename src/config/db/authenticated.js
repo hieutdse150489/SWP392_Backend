@@ -1,5 +1,4 @@
 var jwt = require("jsonwebtoken");
-
 var Token = require("./config");
 
 module.exports = {

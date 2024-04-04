@@ -105,47 +105,15 @@ class FeedbackController {
 
     }
 
-    // delete(req, res, next) {
-    //     try {
-    //         const { id } = req.params; // Lấy ID của đánh giá từ URL
 
-    //         // Tìm đánh giá theo ID
-    //         const rating = Feedback.findById(id);
-    //         if (!rating) {
-    //             return res.status(404).json({ error: 'Feedback not found.' });
-    //         }
-
-    //         // Kiểm tra xem người dùng có quyền xóa đánh giá không
-    //         if (rating.user.toString() !== req.user._id.toString()) {
-    //             return res.status(403).json({ error: 'You do not have permission to delete this rating.' });
-    //         }
-
-    //         // Xóa đánh giá
-    //         rating.remove();
-
-    //         // Trả về thông báo xóa thành công
-    //         res.json({ message: 'Feedback deleted successfully.' });
-    //     } catch (error) {
-    //         console.error(error);
-    //         res.status(500).json({ error: 'Could not delete the rating.' });
-    //     }
-
-    // }
     hide= async (req, res, next)=> {
         if (req.body.artwork) {
-                    // await Feedback.findByIdAndUpdate(
-                    //   { artwork: req.body.artwork },
-                    //   { hidden: true }
-                    // );
+                    
                     await Artwork.findByIdAndUpdate(
                       { _id: req.body.artwork },
                       { hidden: true }
                     );
         } else {
-                    // await Feedback.findByIdAndUpdate(
-                    //   { accuse: req.body.accuse },
-                    //   { hidden: true }
-                    // );
                     await User.findByIdAndUpdate(
                       { _id: req.body.accuse },
                       { hidden: true }
@@ -156,19 +124,13 @@ class FeedbackController {
 
     unhide= async (req, res, next)=> {
               if (req.body?.artwork) {
-                // await Feedback.findByIdAndUpdate(
-                //   { artwork: req.body.artwork },
-                //   { hidden: true }
-                // );
+                
                 await Artwork.findByIdAndUpdate(
                   { _id: req.body.artwork },
                   { hidden: false }
                 );
               } else {
-                // await Feedback.findByIdAndUpdate(
-                //   { accuse: req.body.accuse },
-                //   { hidden: true }
-                // );
+                
                 await User.findByIdAndUpdate(
                   { _id: req.body.accuse },
                   { hidden: false }

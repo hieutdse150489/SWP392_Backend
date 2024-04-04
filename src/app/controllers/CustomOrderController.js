@@ -617,9 +617,7 @@ class CustomOrderController {
           //  Kiểm tra xem người dùng có quyền truy cập đơn hàng không
           if (
             true
-            // checkTokenValid.user._id.toString() ===
-            //   CustomOrder.user.toString() ||
-            // checkTokenValid.user.admin
+            
           ) {
             return res.json(CustomOrder);
           }
