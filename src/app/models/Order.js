@@ -1,33 +1,30 @@
-<<<<<<< HEAD
+<< << << < HEAD
 const mongoose = require('mongoose');
 const MongooseDelete = require('mongoose-delete');
 const mongoosePaginate = require('mongoose-paginate-v2');
 
-const OrderSchema = new mongoose.Schema(
-  {
+const OrderSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: "user", required: true }, // Tham chiếu đến người dùng đã đặt hàng
     seller: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
-      required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+        required: true,
     }, // Tham chiếu đến người dùng đã đặt hàng
-    products: [
-      {
+    products: [{
         product: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "products",
-          required: true,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "products",
+            required: true,
         }, // Tham chiếu đến sản phẩm đã đặt
         seller: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "user",
-          required: true,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "user",
+            required: true,
         }, //
         quantity: { type: Number, default: 1 }, // Số lượng sản phẩm đã đặt (mặc định là 1)
         price: { type: Number, required: true }, // Giá sản phẩm khi đặt hàng
         image: [{ type: String }],
-      },
-    ],
+    }, ],
     totalAmount: { type: Number, required: true }, // Tổng số tiền cho đơn hàng
     shippingAddress: { type: String, maxLength: 255, required: true },
     description: { type: String, maxLength: 1000 },
@@ -35,33 +32,31 @@ const OrderSchema = new mongoose.Schema(
     name: { type: String, maxLength: 255, required: true },
     phone: { type: String, maxLength: 255, required: true },
     status: {
-      type: String,
-      enum: [
-        "Pending",
-        "Processing",
-        "Shipped",
-        "Delivered",
-        "Canceled",
-        "Returned",
-      ],
-      default: "Pending", // Trạng thái mặc định là "Chờ xử lý"
+        type: String,
+        enum: [
+            "Pending",
+            "Processing",
+            "Shipped",
+            "Delivered",
+            "Canceled",
+            "Returned",
+        ],
+        default: "Pending", // Trạng thái mặc định là "Chờ xử lý"
     },
     payment: {
-      type: String,
-      maxLength: 255,
-      enum: ["Cash", "Paypal", "Transfer", "Pending", "Canceled"],
-      default: "Pending", // Trạng thái mặc định là "Chờ xử lý"
+        type: String,
+        maxLength: 255,
+        enum: ["Cash", "Paypal", "Transfer", "Pending", "Canceled"],
+        default: "Pending", // Trạng thái mặc định là "Chờ xử lý"
     },
     deletedAt: { type: String, maxLength: 255, default: null },
-  },
-  {
+}, {
     timestamps: true,
-  }
-);
+});
 OrderSchema.plugin(MongooseDelete, { deletedAt: true, overrideMethods: 'all' });
 OrderSchema.plugin(mongoosePaginate);
-module.exports = mongoose.model('order', OrderSchema);;
-=======
+module.exports = mongoose.model('order', OrderSchema);; ===
+=== =
 const express = require('express')
 const routerOrder = express.Router()
 const OrderController = require('../app/controllers/OrderController')
@@ -77,7 +72,7 @@ routerOrder
     .route("/user/pending")
     .get(OrderController.getUserPending)
 
-    routerOrder
+routerOrder
     .route("/user/Canceled/:id/:status")
     .put(OrderController.putUserCanceled)
 routerOrder
@@ -100,7 +95,7 @@ routerOrder
     .route("/user/all")
     .get(OrderController.getUserAll)
 
-    
+
 
 routerOrder
     .route("/admin/pending")
@@ -127,7 +122,7 @@ routerOrder
 
 routerOrder
     .route("/admin/put/:status")
-    .put( OrderController.putAdminStatus)
+    .put(OrderController.putAdminStatus)
 
 routerOrder
     .route("/user/put/:id")
@@ -162,5 +157,5 @@ routerOrder
     .post(authenticatedStaff, OrderController.check, OrderController.post)
 
 
-module.exports = routerOrder
->>>>>>> a27cd2e89b27149749ed467138fa2e69613a9f5a
+module.exports = routerOrder >>>
+    >>> > a27cd2e89b27149749ed467138fa2e69613a9f5a
